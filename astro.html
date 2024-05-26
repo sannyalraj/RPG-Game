@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Web Page Design</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <label for="dob">Date of Birth (dd-mm-yyyy):</label>
+            <input type="text" id="dob" name="dob" pattern="\d{2}-\d{2}-\d{4}" placeholder="dd-mm-yyyy" required><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <button onclick="calculateMulyank()">Bhagyank</button><br>
+            <p id="dobSumResult"></p><br>         
+
+            <button onclick="calculateNameSum()">Name Sum</button>
+            <p id="nameSumResult"></p><br>
+            <button onclick="calculatedd()">Mulyank</button>
+            <p id="Mulyank"></p><br>
+            <button onclick="calculatemap()">Map</button>
+        </div>
+        <div class="matrix">
+            <table>
+                <tr>
+                    <td id="4"></td>
+                    <td id="9"></td>
+                    <td id="2"></td>
+                </tr>
+                <tr>
+                    <td id="3"></td>
+                    <td id="5"></td>
+                    <td id="7"></td>
+                </tr>
+                <tr>
+                    <td id="8"></td>
+                    <td id="1"></td>
+                    <td id="6"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let mulya;
+        let bha;
+        let ns;
+        function calculatemap() {
+            var dobInput = document.getElementById("dob");
+            var dobValue = dobInput.value;
+
+            // Extract day, month, and year
+            var day = dobValue.substring(0, 2);
+            var month = dobValue.substring(3, 5);
+            var year = dobValue.substring(6, 10);
+
+            for (let x = 1; x < 10; x++) {
+                if (parseInt(day.charAt(0)) === x || parseInt(month.charAt(0)) === x || parseInt(year.charAt(0)) === x){
+                    switch (x) {
+                        case 1:
+                            appendToCell("1", x.toString());
+                            break;
+
+                        case 2:
+                            appendToCell("2", x.toString());
+                            break;
+                        case 3:
+                            appendToCell("3", x.toString());
+                            break;
+                        case 4:
+                            appendToCell("4", x.toString());
+                            break;
+                        case 5:
+                            appendToCell("5", x.toString());
+                            break;
+                        case 6:
+                            appendToCell("6", x.toString());
+                            break;
+                        case 7:
+                            appendToCell("7", x.toString());
+                            break;
+                        case 8:
+                            appendToCell("8", x.toString());
+                            break;
+                        case 9:
+                            appendToCell("9", x.toString());
+                            break;
+                    }
+                }
+            }
+
+            for (let x = 1; x < 10; x++) {
+                if (parseInt(day.charAt(1)) === x || parseInt(month.charAt(1)) === x || parseInt(year.charAt(1)) === x){
+                    switch (x) {
+                        case 1:
+                            appendToCell("1", x.toString());
+                            break;
+
+                        case 2:
+                            appendToCell("2", x.toString());
+                            break;
+                        case 3:
+                            appendToCell("3", x.toString());
+                            break;
+                        case 4:
+                            appendToCell("4", x.toString());
+                            break;
+                        case 5:
+                            appendToCell("5", x.toString());
+                            break;
+                        case 6:
+                            appendToCell("6", x.toString());
+                            break;
+                        case 7:
+                            appendToCell("7", x.toString());
+                            break;
+                        case 8:
+                            appendToCell("8", x.toString());
+                            break;
+                        case 9:
+                            appendToCell("9", x.toString());
+                            break;
+                    }
+                }
+            }
+            
+            for (let x = 1; x < 10; x++) {
+                if (parseInt(year.charAt(2)) === x){
+                    switch (x) {
+                        case 1:
+                            appendToCell("1", x.toString());
+                            break;
+
+                        case 2:
+                            appendToCell("2", x.toString());
+                            break;
+                        case 3:
+                            appendToCell("3", x.toString());
+                            break;
+                        case 4:
+                            appendToCell("4", x.toString());
+                            break;
+                        case 5:
+                            appendToCell("5", x.toString());
+                            break;
+                        case 6:
+                            appendToCell("6", x.toString());
+                            break;
+                        case 7:
+                            appendToCell("7", x.toString());
+                            break;
+                        case 8:
+                            appendToCell("8", x.toString());
+                            break;
+                        case 9:
+                            appendToCell("9", x.toString());
+                            break;
+                    }
+                }
+            }
+            for (let x = 1; x < 10; x++) {
+                if (parseInt(year.charAt(3)) === x){
+                    switch (x) {
+                        case 1:
+                            appendToCell("1", x.toString());
+                            break;
+
+                        case 2:
+                            appendToCell("2", x.toString());
+                            break;
+                        case 3:
+                            appendToCell("3", x.toString());
+                            break;
+                        case 4:
+                            appendToCell("4", x.toString());
+                            break;
+                        case 5:
+                            appendToCell("5", x.toString());
+                            break;
+                        case 6:
+                            appendToCell("6", x.toString());
+                            break;
+                        case 7:
+                            appendToCell("7", x.toString());
+                            break;
+                        case 8:
+                            appendToCell("8", x.toString());
+                            break;
+                        case 9:
+                            appendToCell("9", x.toString());
+                            break;
+                    }
+                }
+            }
+            
+            
+        }
+
+        function appendToCell(cellId, value) {
+            var cell = document.getElementById(cellId);
+            
+            // Sanitize the value and then append
+            var sanitizedValue = document.createTextNode(value);
+            cell.appendChild(sanitizedValue);
+        }
+        
+
+        function calculateMulyank() { // bhagyank
+            var dobInput = document.getElementById("dob");
+            var dobValue = dobInput.value;
+
+            // Extract digits from date of birth and calculate sum
+            var sum = dobValue.replace(/[^0-9]/g, '').split('').reduce(function (acc, digit) {
+                return acc + parseInt(digit);
+            }, 0);
+
+            // Keep summing until it becomes a single-digit number
+            while (sum > 9) {
+                sum = sum.toString().split('').reduce(function (acc, digit) {
+                    return acc + parseInt(digit);
+                }, 0);
+            }
+            bha=sum;
+            // Display the result
+            document.getElementById("dobSumResult").innerHTML = "Bhagyank: " + sum;
+        }
+
+        function calculatedd() { // Asli mulyank
+            var dobInput = document.getElementById("dob");
+            var dobValue = dobInput.value;
+
+            // Extract day digits from date of birth and calculate sum
+            var sum = dobValue.substring(0, 2).split('').reduce(function (acc, digit) {
+                return acc + parseInt(digit);
+            }, 0);
+
+            // Keep summing until it becomes a single-digit number
+            while (sum > 9) {
+                sum = sum.toString().split('').reduce(function (acc, digit) {
+                    return acc + parseInt(digit);
+                }, 0);
+            }
+            mulya=sum
+            // Display the result
+            document.getElementById("Mulyank").innerHTML = "Mulyank: " + sum;
+        }
+
+        function calculateNameSum() {
+            var nameInput = document.getElementById("name");
+            var nameValue = nameInput.value.toUpperCase();
+
+            // Define values for characters
+            var charValues = {
+                'A': 1, 'I': 1, 'J': 1, 'Q': 1, 'Y': 1,
+                'B': 2, 'K': 2, 'R': 2,
+                'C': 3, 'G': 3, 'L': 3, 'S': 3,
+                'D': 4, 'M': 4, 'T': 4,
+                'F': 5, 'H': 5, 'N': 5, 'X': 5,
+                'U': 6, 'V': 6, 'W': 6,
+                'O': 7, 'Z': 7,
+                'P': 8
+            };
+
+            // Calculate sum for each character in the name
+            var nameSum = 0;
+            for (var i = 0; i < nameValue.length; i++) {
+                var char = nameValue[i];
+                if (char in charValues) {
+                    nameSum += charValues[char];
+                }
+            }
+
+            // Reduce the sum to a single-digit value
+            while (nameSum > 9) {
+                nameSum = nameSum.toString().split('').reduce(function (acc, digit) {
+                    return acc + parseInt(digit);
+                }, 0);
+            }
+            ns=nameSum;
+            // Display the result
+            document.getElementById("nameSumResult").innerHTML = "Name Sum: " + nameSum;
+        }
+    </script>
+</body>
+</html>

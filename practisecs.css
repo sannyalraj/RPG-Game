@@ -1,0 +1,32 @@
+ body{
+
+    background-color: aqua; /* changing backgroumd colour */
+} 
+#welcome{
+    color: antiquewhite;
+    background-color: brown;/* select individually */
+    border: dashed;
+}
+ .tomi{
+    color: brown;
+    background-color: blueviolet; /* select individually */
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px; 
+} 
+.san{
+    border: solid;
+} 
+.dropdownbutton{
+    background-color: blue;
+    color: brown;
+    border: solid;
+    font-size: 20px;
+}
+.s{
+    color: blueviolet;
+}
+
+  /*   * {
+    color: blue;
+} * is a universal selector selects every eleny and makes changes*/
